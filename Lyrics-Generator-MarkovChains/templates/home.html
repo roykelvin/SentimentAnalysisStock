@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lyrics Generator</title>
+    <link rel="stylesheet" type="text/css" href="../static/styles/home.css">
+</head>
+<body>
+    <h1>Welcome to Lyrics Generator</h1>
+    <h6>Here, you can generate lyrics by the artist of your choice</h6>
+    <form action="{{url_for('lyricsGenerator') }}" method="POST" id="form">
+        <input type="text" id="search" name="search" placeholder="Search for an artist...">
+        <input type="submit" id="submit">
+    </form>
+    <div id="lyrics">
+        {% for lyric in lyrics %}
+        <p>{{lyric}}</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
